@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./app/Dockerfile.production
+    command: npm run dev
+    ports: 
+      - "6060:8080"
+    volumes:
+      - "./app:/app"  
