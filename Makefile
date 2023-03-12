@@ -3,3 +3,6 @@ test:
 
 start:
 	docker-compose -f docker-compose.override.yml up
+
+cp-env:
+	cp -f ./.env.example ./.env
