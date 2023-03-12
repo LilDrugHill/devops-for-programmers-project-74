@@ -8,6 +8,6 @@ RUN npm ci
 
 COPY app/. .
 
-EXPOSE 8080 443 80
+EXPOSE 8080
 
 CMD npm start
