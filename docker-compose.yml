@@ -4,7 +4,7 @@ services:
      context: .
      dockerfile: ./Dockerfile
    image: lildrughill/devops-for-programmers-project-74:v1
-   command: bash -c 'sleep 3 && npm test'
+   command: npm test
    environment:
       DATABASE_HOST: ${DATABASE_HOST}
       DATABASE_NAME: ${DATABASE_NAME}
