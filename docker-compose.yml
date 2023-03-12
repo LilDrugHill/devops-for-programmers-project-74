@@ -16,3 +16,4 @@ services:
   restart: always
   environment:
     POSTGRES_PASSWORD: password
+    POSTGRES_USER: postgres
