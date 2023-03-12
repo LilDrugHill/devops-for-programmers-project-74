@@ -5,4 +5,14 @@ services:
      dockerfile: ./Dockerfile
    image: lildrughill/devops-for-programmers-project-74:v1
    ports:
-     - "80:8080"
+     - "8080:8080"
+   volumes:
+     - ".env:/app/.env"
+   depends_on:
+     - db
+
+ db:
+  image: postgres
+  env_file:
+    - .env
+  restart: always
