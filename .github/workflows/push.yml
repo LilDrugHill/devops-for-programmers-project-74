@@ -4,6 +4,10 @@ on: push
 
 env: # тег, под которым будет храниться временный образ-кеш
   TEST_TAG: ${{ secrets.DOCKERHUB_USERNAME }}/devops-for-programmers-project-74:test
+  DATABASE_HOST: db
+  DATABASE_NAME: postgres
+  DATABASE_USERNAME: postgres
+  DATABASE_PASSWORD: password
 
 jobs:
 
@@ -33,7 +37,13 @@ jobs:
 
       # Запуск тестов, команда запуска зависит от стека
       # Лучше ее спрятать за make
-      - run: make test
+      - name: test
+        env:
+          DATABASE_HOST: db
+          DATABASE_NAME: postgres
+          DATABASE_USERNAME: postgres
+          DATABASE_PASSWORD: password
+        run: make test
       # Здесь же нужно настроить запуск линтера
 
       # Заливаем протестированный образ на Docker Hub
