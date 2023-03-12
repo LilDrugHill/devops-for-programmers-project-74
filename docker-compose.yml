@@ -7,7 +7,7 @@ services:
    ports:
      - "8080:8080"
    volumes:
-     - ".env.example:/app/.env"
+     - ".env.example:.env"
    depends_on:
      - db
 
