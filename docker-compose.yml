@@ -1,8 +1,8 @@
 services:
  app:
-   build: 
+   build:
      context: .
-     dockerfile: ./Dockerfile
+     dockerfile: ./Dockerfile.production
    image: lildrughill/devops-for-programmers-project-74:v1
    command: npm test
    environment:
@@ -14,8 +14,6 @@ services:
 
    volumes:
      - ".env.example:/app/.env"
-   ports:
-     - "8080:8080"
    depends_on:
      - db
 
